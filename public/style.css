@@ -1,0 +1,206 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0d1117;
+  color: #e6edf3;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0d1117;
+  color: #e6edf3;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 3em;
+  margin-bottom: 0.3em;
+  color: #58a6ff;
+}
+
+header p {
+  font-size: 1.2em;
+  color: #8b949e;
+}
+
+.intro p {
+  margin-top: 2em;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+footer {
+  margin-top: 4em;
+  font-size: 0.9em;
+  color: #6e7681;
+}
+.services {
+  display: grid;
+  grid-template-columns: repeat(1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.card {
+  position: relative;
+  background: rgba(24, 29, 34, 0.7);
+  border: 1px solid rgba(88, 166, 255, 0.2);
+  border-radius: 16px;
+  padding: 24px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 32px rgba(88, 166, 255, 0.25);
+  border-color: #58a6ff;
+}
+
+.card h2 {
+  color: #79c0ff;
+  margin-bottom: 12px;
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+.card p {
+  color: #c9d1d9;
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+
+.card-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+}
+
+.glow-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, #58a6ff, #9ecbff, #58a6ff);
+  animation: move-glow 3s linear infinite;
+}
+
+@keyframes move-glow {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 200%;
+  }
+}
+
+.hero {
+  width: 100vw;
+  height: 100vh;
+  background: url("/images/starscape.png") center center / cover no-repeat fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  color: #e6edf3;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1.5s ease-out forwards;
+}
+
+.hero-title {
+  font-size: 4em;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #58a6ff;
+  text-shadow: 0 0 12px rgba(88, 166, 255, 0.3);
+}
+
+.hero-tagline {
+  font-size: 1.5em;
+  color: #c9d1d9;
+  margin-top: 0.5em;
+  animation: pulse 4s infinite alternate;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0.6;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: #58a6ff;
+  animation: bounce 2s infinite;
+  z-index: 2;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-indicator:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(10px);
+  }
+}
